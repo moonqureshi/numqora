@@ -68,10 +68,16 @@ header{
   padding:20px;
 }
 
+.section-title{
+  text-align:center;
+  margin:20px 0 25px;
+}
+
+/* 3 CALCULATORS PER ROW */
 .calculator-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
 }
 
 .card{
@@ -100,16 +106,19 @@ label{
   font-size:14px;
 }
 
-input,select{
+input,
+select{
   width:100%;
   padding:12px;
   border:1px solid #cbd5e1;
   border-radius:8px;
   font-size:15px;
   outline:none;
+  margin-bottom:5px;
 }
 
-input:focus,select:focus{
+input:focus,
+select:focus{
   border-color:#2563eb;
 }
 
@@ -138,11 +147,7 @@ button:hover{
   color:#1e40af;
   font-weight:600;
   min-height:20px;
-}
-
-.section-title{
-  text-align:center;
-  margin:20px 0 25px;
+  word-wrap:break-word;
 }
 
 footer{
@@ -157,6 +162,14 @@ footer strong{
   color:white;
 }
 
+/* TABLET */
+@media(max-width:900px){
+  .calculator-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+/* MOBILE */
 @media(max-width:600px){
   .header-inner{
     flex-direction:column;
@@ -165,6 +178,10 @@ footer strong{
 
   .hero h1{
     font-size:30px;
+  }
+
+  .calculator-grid{
+    grid-template-columns:1fr;
   }
 
   .card{
@@ -197,7 +214,7 @@ footer strong{
 
 <div class="calculator-grid">
 
-<!-- Percentage Calculator -->
+<!-- 1. Percentage Calculator -->
 <div class="card">
 <h2>Percentage Calculator</h2>
 <p>Calculate percentages quickly.</p>
@@ -224,7 +241,7 @@ footer strong{
 <div class="result" id="p3result"></div>
 </div>
 
-<!-- Age Calculator -->
+<!-- 2. Age Calculator -->
 <div class="card">
 <h2>Age Calculator</h2>
 <p>Calculate your exact age.</p>
@@ -236,7 +253,7 @@ footer strong{
 <div class="result" id="ageResult"></div>
 </div>
 
-<!-- BMI -->
+<!-- 3. BMI Calculator -->
 <div class="card">
 <h2>BMI Calculator</h2>
 <p>Calculate your Body Mass Index.</p>
@@ -251,7 +268,7 @@ footer strong{
 <div class="result" id="bmiResult"></div>
 </div>
 
-<!-- EMI -->
+<!-- 4. EMI Calculator -->
 <div class="card">
 <h2>EMI Calculator</h2>
 <p>Calculate your monthly loan payment.</p>
@@ -269,7 +286,7 @@ footer strong{
 <div class="result" id="emiResult"></div>
 </div>
 
-<!-- Loan -->
+<!-- 5. Loan Calculator -->
 <div class="card">
 <h2>Loan Calculator</h2>
 <p>Estimate your monthly loan payment.</p>
@@ -287,7 +304,7 @@ footer strong{
 <div class="result" id="loanResult"></div>
 </div>
 
-<!-- Mortgage -->
+<!-- 6. Mortgage Calculator -->
 <div class="card">
 <h2>Mortgage Calculator</h2>
 <p>Calculate your monthly mortgage payment.</p>
@@ -308,7 +325,7 @@ footer strong{
 <div class="result" id="mortgageResult"></div>
 </div>
 
-<!-- Calorie -->
+<!-- 7. Calorie Calculator -->
 <div class="card">
 <h2>Calorie Calculator</h2>
 <p>Calculate your estimated daily BMR.</p>
@@ -332,7 +349,7 @@ footer strong{
 <div class="result" id="calorieResult"></div>
 </div>
 
-<!-- Date -->
+<!-- 8. Date Calculator -->
 <div class="card">
 <h2>Date Calculator</h2>
 <p>Calculate the number of days between two dates.</p>
@@ -347,7 +364,7 @@ footer strong{
 <div class="result" id="dateResult"></div>
 </div>
 
-<!-- Unit -->
+<!-- 9. Unit Converter -->
 <div class="card">
 <h2>Unit Converter</h2>
 <p>Convert common units easily.</p>
@@ -369,7 +386,7 @@ footer strong{
 <div class="result" id="unitResult"></div>
 </div>
 
-<!-- Body Fat -->
+<!-- 10. Body Fat Calculator -->
 <div class="card">
 <h2>Body Fat Calculator</h2>
 <p>Estimate body fat percentage using BMI.</p>
@@ -394,8 +411,8 @@ footer strong{
 </div>
 
 <footer>
-  <strong>Numqora</strong><br>
-  Free online calculators for everyday use.
+<strong>Numqora</strong><br>
+Free online calculators for everyday use.
 </footer>
 
 <script>
