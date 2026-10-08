@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Percentage Calculator - Free Online Calculator | Numqora</title>
+    <meta name="description" content="Calculate percentages quickly and easily with Numqora's free online percentage calculator.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #222;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        header p {
+            margin: 8px 0 0;
+            color: #666;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .calculator {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .calculator h2 {
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 13px;
+            border: none;
+            border-radius: 6px;
+            background: #222;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .info {
+            background: white;
+            margin-top: 25px;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Numqora</h1>
+    <p>Free Online Calculators</p>
+</header>
+
+<div class="container">
+
+    <div class="calculator">
+        <h2>Percentage Calculator</h2>
+
+        <p>Calculate what percentage one number is of another.</p>
+
+        <label for="number">Number</label>
+        <input type="number" id="number" placeholder="Example: 25">
+
+        <label for="total">Total</label>
+        <input type="number" id="total" placeholder="Example: 100">
+
+        <button onclick="calculatePercentage()">Calculate</button>
+
+        <div id="result">
+            Your result will appear here.
+        </div>
+    </div>
+
+    <div class="info">
+        <h2>How to calculate a percentage?</h2>
+
+        <p>
+            To calculate what percentage one number is of another,
+            divide the first number by the second number and multiply
+            the result by 100.
+        </p>
+
+        <p><strong>Formula:</strong></p>
+
+        <p>
+            Percentage = (Number ÷ Total) × 100
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Numqora. All rights reserved.
+</footer>
+
+<script>
+    function calculatePercentage() {
+
+        const number = parseFloat(document.getElementById("number").value);
+        const total = parseFloat(document.getElementById("total").value);
+        const result = document.getElementById("result");
+
+        if (isNaN(number) || isNaN(total)) {
+            result.textContent = "Please enter both numbers.";
+            return;
+        }
+
+        if (total === 0) {
+            result.textContent = "Total cannot be zero.";
+            return;
+        }
+
+        const percentage = (number / total) * 100;
+
+        result.textContent = number + " is " + percentage.toFixed(2) + "% of " + total;
+    }
+</script>
+
+</body>
+</html>
