@@ -6,190 +6,153 @@
 
 <title>Free Online Calculators | Numqora</title>
 
-<meta name="description" content="Free online calculators for percentage, age, BMI, EMI, loans, mortgage, calories, dates, units and body fat.">
+<meta name="description" content="Numqora offers free online calculators for percentage, age, BMI, EMI, loans, mortgage, calories, dates, units and body fat.">
 
 <style>
-* {
-  box-sizing: border-box;
+*{
+  box-sizing:border-box;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f5f7fb;
-  color: #172033;
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f5f7fb;
+  color:#222;
 }
 
-header {
-  background: white;
-  border-bottom: 1px solid #e5e7eb;
-  padding: 20px;
+header{
+  background:#111827;
+  color:white;
+  padding:22px 20px;
 }
 
-.header-inner {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.header-inner{
+  max-width:1200px;
+  margin:auto;
 }
 
-.logo {
-  font-size: 28px;
-  font-weight: bold;
-  color: #2563eb;
+.logo{
+  font-size:28px;
+  font-weight:bold;
 }
 
-.tagline {
-  color: #64748b;
-  font-size: 14px;
+.tagline{
+  margin-top:5px;
+  color:#cbd5e1;
 }
 
-.hero {
-  text-align: center;
-  padding: 50px 20px 35px;
+.container{
+  max-width:1200px;
+  margin:40px auto;
+  padding:0 20px;
 }
 
-.hero h1 {
-  margin: 0 0 12px;
-  font-size: 38px;
+h1{
+  font-size:36px;
+  margin-bottom:10px;
 }
 
-.hero p {
-  max-width: 700px;
-  margin: auto;
-  color: #64748b;
-  line-height: 1.6;
+.intro{
+  color:#555;
+  margin-bottom:35px;
 }
 
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
+/* 3 CARDS PER ROW */
+.calculator-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:24px;
 }
 
-.section-title {
-  text-align: center;
-  margin: 10px 0 25px;
+/* Each calculator card */
+.card{
+  background:white;
+  border-radius:14px;
+  padding:24px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.08);
+
+  flex:0 0 calc((100% - 48px) / 3);
+  max-width:calc((100% - 48px) / 3);
 }
 
-/* DESKTOP: 3 CALCULATORS PER ROW */
-.calculator-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  width: 100%;
+.card h2{
+  margin-top:0;
+  font-size:22px;
 }
 
-.card {
-  background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 24px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-  min-width: 0;
-}
-
-.card h2 {
-  margin-top: 0;
-  font-size: 21px;
-}
-
-.card p {
-  color: #64748b;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-label {
-  display: block;
-  margin-top: 14px;
-  margin-bottom: 6px;
-  font-weight: bold;
-  font-size: 14px;
+.card p{
+  color:#666;
 }
 
 input,
-select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  font-size: 15px;
-  background: white;
+select{
+  width:100%;
+  padding:11px;
+  margin:7px 0 12px;
+  border:1px solid #ccc;
+  border-radius:7px;
+  font-size:15px;
 }
 
-input:focus,
-select:focus {
-  outline: none;
-  border-color: #2563eb;
+button{
+  width:100%;
+  padding:11px;
+  border:none;
+  border-radius:7px;
+  background:#111827;
+  color:white;
+  font-size:15px;
+  cursor:pointer;
 }
 
-button {
-  width: 100%;
-  margin-top: 18px;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  background: #2563eb;
-  color: white;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
+button:hover{
+  background:#374151;
 }
 
-button:hover {
-  background: #1d4ed8;
+.result{
+  margin-top:15px;
+  font-weight:bold;
+  color:#111827;
 }
 
-.result {
-  margin-top: 15px;
-  padding: 12px;
-  background: #eff6ff;
-  border-radius: 8px;
-  color: #1e40af;
-  font-weight: bold;
-  min-height: 20px;
-  word-wrap: break-word;
+footer{
+  margin-top:50px;
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:25px;
 }
 
-footer {
-  margin-top: 50px;
-  padding: 30px 20px;
-  text-align: center;
-  background: #172033;
-  color: #cbd5e1;
+footer p{
+  margin:5px;
 }
 
-footer strong {
-  color: white;
-}
+/* TABLET */
+@media(max-width:900px){
 
-/* TABLET: 2 PER ROW */
-@media (max-width: 900px) {
-  .calculator-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* MOBILE: 1 PER ROW */
-@media (max-width: 600px) {
-  .header-inner {
-    flex-direction: column;
-    gap: 8px;
+  .card{
+    flex:0 0 calc((100% - 24px) / 2);
+    max-width:calc((100% - 24px) / 2);
   }
 
-  .hero h1 {
-    font-size: 30px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+  .container{
+    margin-top:25px;
   }
 
-  .calculator-grid {
-    grid-template-columns: 1fr;
+  h1{
+    font-size:28px;
   }
 
-  .card {
-    padding: 20px;
+  .card{
+    flex:0 0 100%;
+    max-width:100%;
   }
+
 }
 </style>
 </head>
@@ -203,182 +166,169 @@ footer strong {
   </div>
 </header>
 
-<section class="hero">
-  <h1>Free Online Calculators</h1>
-  <p>
-    Simple and accurate calculators for everyday calculations.
-    Calculate percentages, age, BMI, EMI, loans, mortgage, calories and more.
-  </p>
-</section>
-
 <div class="container">
 
-<h2 class="section-title">Our Calculators</h2>
+<h1>Free Online Calculators</h1>
+
+<p class="intro">
+Simple and accurate calculators for everyday calculations.
+Calculate percentages, age, BMI, EMI, loans, mortgage, calories and more.
+</p>
+
+<h2>Our Calculators</h2>
 
 <div class="calculator-grid">
 
-<!-- 1 -->
+<!-- 1 Percentage -->
 <div class="card">
 <h2>Percentage Calculator</h2>
 <p>Calculate percentages quickly.</p>
 
-<label>X% of Y</label>
-<input id="p1x" type="number" placeholder="Example: 20">
-<input id="p1y" type="number" placeholder="Example: 500">
+<input type="number" id="p1" placeholder="X">
+<input type="number" id="p2" placeholder="Y">
 
-<button onclick="percentage1()">Calculate</button>
-<div class="result" id="p1result"></div>
+<button onclick="percentage1()">Calculate X% of Y</button>
 
-<label>X is what % of Y?</label>
-<input id="p2x" type="number" placeholder="Example: 100">
-<input id="p2y" type="number" placeholder="Example: 500">
+<div class="result" id="r1"></div>
 
-<button onclick="percentage2()">Calculate</button>
-<div class="result" id="p2result"></div>
+<hr>
 
-<label>Percentage Increase / Decrease</label>
-<input id="p3old" type="number" placeholder="Old value">
-<input id="p3new" type="number" placeholder="New value">
+<input type="number" id="p3" placeholder="X">
+<input type="number" id="p4" placeholder="Y">
 
-<button onclick="percentage3()">Calculate</button>
-<div class="result" id="p3result"></div>
+<button onclick="percentage2()">X is what % of Y?</button>
+
+<div class="result" id="r2"></div>
+
+<hr>
+
+<input type="number" id="p5" placeholder="Original Value">
+<input type="number" id="p6" placeholder="New Value">
+
+<button onclick="percentage3()">Percentage Increase / Decrease</button>
+
+<div class="result" id="r3"></div>
 </div>
 
-<!-- 2 -->
+
+<!-- 2 Age -->
 <div class="card">
 <h2>Age Calculator</h2>
 <p>Calculate your exact age.</p>
 
-<label>Date of Birth</label>
-<input id="dob" type="date">
+<input type="date" id="dob">
 
 <button onclick="ageCalc()">Calculate Age</button>
+
 <div class="result" id="ageResult"></div>
 </div>
 
-<!-- 3 -->
+
+<!-- 3 BMI -->
 <div class="card">
 <h2>BMI Calculator</h2>
 <p>Calculate your Body Mass Index.</p>
 
-<label>Weight (kg)</label>
-<input id="weight" type="number" placeholder="70">
-
-<label>Height (cm)</label>
-<input id="height" type="number" placeholder="175">
+<input type="number" id="weight" placeholder="Weight (kg)">
+<input type="number" id="height" placeholder="Height (cm)">
 
 <button onclick="bmiCalc()">Calculate BMI</button>
+
 <div class="result" id="bmiResult"></div>
 </div>
 
-<!-- 4 -->
+
+<!-- 4 EMI -->
 <div class="card">
 <h2>EMI Calculator</h2>
 <p>Calculate your monthly loan payment.</p>
 
-<label>Loan Amount</label>
-<input id="emiAmount" type="number" placeholder="100000">
-
-<label>Interest Rate (%)</label>
-<input id="emiRate" type="number" placeholder="10">
-
-<label>Loan Period (Years)</label>
-<input id="emiYears" type="number" placeholder="5">
+<input type="number" id="emiAmount" placeholder="Loan Amount">
+<input type="number" id="emiRate" placeholder="Interest Rate (%)">
+<input type="number" id="emiYears" placeholder="Loan Period (Years)">
 
 <button onclick="emiCalc()">Calculate EMI</button>
+
 <div class="result" id="emiResult"></div>
 </div>
 
-<!-- 5 -->
+
+<!-- 5 Loan -->
 <div class="card">
 <h2>Loan Calculator</h2>
 <p>Estimate your monthly loan payment.</p>
 
-<label>Loan Amount</label>
-<input id="loanAmount" type="number" placeholder="100000">
-
-<label>Interest Rate (%)</label>
-<input id="loanRate" type="number" placeholder="10">
-
-<label>Loan Period (Years)</label>
-<input id="loanYears" type="number" placeholder="5">
+<input type="number" id="loanAmount" placeholder="Loan Amount">
+<input type="number" id="loanRate" placeholder="Interest Rate (%)">
+<input type="number" id="loanYears" placeholder="Loan Period (Years)">
 
 <button onclick="loanCalc()">Calculate Loan</button>
+
 <div class="result" id="loanResult"></div>
 </div>
 
-<!-- 6 -->
+
+<!-- 6 Mortgage -->
 <div class="card">
 <h2>Mortgage Calculator</h2>
 <p>Calculate your monthly mortgage payment.</p>
 
-<label>Home Price</label>
-<input id="homePrice" type="number" placeholder="200000">
-
-<label>Down Payment</label>
-<input id="downPayment" type="number" placeholder="40000">
-
-<label>Interest Rate (%)</label>
-<input id="mortgageRate" type="number" placeholder="6">
-
-<label>Loan Period (Years)</label>
-<input id="mortgageYears" type="number" placeholder="30">
+<input type="number" id="homePrice" placeholder="Home Price">
+<input type="number" id="downPayment" placeholder="Down Payment">
+<input type="number" id="mortgageRate" placeholder="Interest Rate (%)">
+<input type="number" id="mortgageYears" placeholder="Loan Period (Years)">
 
 <button onclick="mortgageCalc()">Calculate Mortgage</button>
+
 <div class="result" id="mortgageResult"></div>
 </div>
 
-<!-- 7 -->
+
+<!-- 7 Calories -->
 <div class="card">
 <h2>Calorie Calculator</h2>
 <p>Calculate your estimated daily BMR.</p>
 
-<label>Age</label>
-<input id="calAge" type="number" placeholder="25">
+<input type="number" id="calAge" placeholder="Age">
 
-<label>Gender</label>
 <select id="calGender">
 <option value="male">Male</option>
 <option value="female">Female</option>
 </select>
 
-<label>Weight (kg)</label>
-<input id="calWeight" type="number" placeholder="70">
-
-<label>Height (cm)</label>
-<input id="calHeight" type="number" placeholder="175">
+<input type="number" id="calWeight" placeholder="Weight (kg)">
+<input type="number" id="calHeight" placeholder="Height (cm)">
 
 <button onclick="calorieCalc()">Calculate Calories</button>
-<div class="result" id="calorieResult"></div>
+
+<div class="result" id="calResult"></div>
 </div>
 
-<!-- 8 -->
+
+<!-- 8 Date -->
 <div class="card">
 <h2>Date Calculator</h2>
 <p>Calculate the number of days between two dates.</p>
 
-<label>Start Date</label>
-<input id="startDate" type="date">
-
-<label>End Date</label>
-<input id="endDate" type="date">
+<input type="date" id="startDate">
+<input type="date" id="endDate">
 
 <button onclick="dateCalc()">Calculate Difference</button>
+
 <div class="result" id="dateResult"></div>
 </div>
 
-<!-- 9 -->
+
+<!-- 9 Unit -->
 <div class="card">
 <h2>Unit Converter</h2>
 <p>Convert common units easily.</p>
 
-<label>Value</label>
-<input id="unitValue" type="number" placeholder="10">
+<input type="number" id="unitValue" placeholder="Value">
 
-<label>Conversion</label>
 <select id="unitType">
-<option value="km-mi">Kilometers → Miles</option>
-<option value="mi-km">Miles → Kilometers</option>
+<option value="km-mile">Kilometers → Miles</option>
+<option value="mile-km">Miles → Kilometers</option>
 <option value="kg-lb">Kilograms → Pounds</option>
 <option value="lb-kg">Pounds → Kilograms</option>
 <option value="cm-ft">Centimeters → Feet</option>
@@ -386,130 +336,130 @@ footer strong {
 </select>
 
 <button onclick="unitCalc()">Convert</button>
+
 <div class="result" id="unitResult"></div>
 </div>
 
-<!-- 10 -->
+
+<!-- 10 Body Fat -->
 <div class="card">
 <h2>Body Fat Calculator</h2>
 <p>Estimate body fat percentage using BMI.</p>
 
-<label>Age</label>
-<input id="bfAge" type="number" placeholder="25">
+<input type="number" id="bfAge" placeholder="Age">
 
-<label>Gender</label>
 <select id="bfGender">
 <option value="male">Male</option>
 <option value="female">Female</option>
 </select>
 
-<label>BMI</label>
-<input id="bfBMI" type="number" placeholder="22.86">
+<input type="number" id="bfBMI" placeholder="BMI">
 
 <button onclick="bodyFatCalc()">Calculate Body Fat</button>
+
 <div class="result" id="bfResult"></div>
 </div>
 
 </div>
 </div>
 
+
 <footer>
-<strong>Numqora</strong><br>
-Free online calculators for everyday use.
+<p><strong>Numqora</strong></p>
+<p>Free online calculators for everyday use.</p>
 </footer>
+
 
 <script>
 
 function percentage1(){
-  let x=Number(document.getElementById("p1x").value);
-  let y=Number(document.getElementById("p1y").value);
+  let x = parseFloat(document.getElementById("p1").value);
+  let y = parseFloat(document.getElementById("p2").value);
 
-  if(!y){
-    document.getElementById("p1result").innerText="Please enter values.";
+  if(isNaN(x) || isNaN(y)){
+    document.getElementById("r1").innerText="Please enter values.";
     return;
   }
 
-  document.getElementById("p1result").innerText=(x*y/100).toFixed(2);
+  document.getElementById("r1").innerText =
+    x + "% of " + y + " = " + (x*y/100);
 }
+
 
 function percentage2(){
-  let x=Number(document.getElementById("p2x").value);
-  let y=Number(document.getElementById("p2y").value);
+  let x = parseFloat(document.getElementById("p3").value);
+  let y = parseFloat(document.getElementById("p4").value);
 
-  if(!y){
-    document.getElementById("p2result").innerText="Please enter values.";
+  if(isNaN(x) || isNaN(y) || y===0){
+    document.getElementById("r2").innerText="Please enter valid values.";
     return;
   }
 
-  document.getElementById("p2result").innerText=(x/y*100).toFixed(2)+"%";
+  document.getElementById("r2").innerText =
+    x + " is " + ((x/y)*100).toFixed(2) + "% of " + y;
 }
+
 
 function percentage3(){
-  let oldVal=Number(document.getElementById("p3old").value);
-  let newVal=Number(document.getElementById("p3new").value);
+  let oldValue = parseFloat(document.getElementById("p5").value);
+  let newValue = parseFloat(document.getElementById("p6").value);
 
-  if(!oldVal){
-    document.getElementById("p3result").innerText="Please enter values.";
+  if(isNaN(oldValue) || isNaN(newValue) || oldValue===0){
+    document.getElementById("r3").innerText="Please enter valid values.";
     return;
   }
 
-  let change=((newVal-oldVal)/oldVal)*100;
+  let change=((newValue-oldValue)/oldValue)*100;
 
-  document.getElementById("p3result").innerText=
-    (change>=0 ? "Increase: " : "Decrease: ")+
-    Math.abs(change).toFixed(2)+"%";
+  document.getElementById("r3").innerText =
+    change>=0
+    ? "Increase: " + change.toFixed(2) + "%"
+    : "Decrease: " + Math.abs(change).toFixed(2) + "%";
 }
 
+
 function ageCalc(){
+
   let dob=new Date(document.getElementById("dob").value);
 
   if(isNaN(dob)){
-    document.getElementById("ageResult").innerText=
-      "Please select your date of birth.";
+    document.getElementById("ageResult").innerText="Please select date of birth.";
     return;
   }
 
   let today=new Date();
 
-  let years=today.getFullYear()-dob.getFullYear();
-  let months=today.getMonth()-dob.getMonth();
-  let days=today.getDate()-dob.getDate();
+  let age=today.getFullYear()-dob.getFullYear();
 
-  if(days<0){
-    months--;
-    days+=new Date(
-      today.getFullYear(),
-      today.getMonth(),
-      0
-    ).getDate();
+  let month=today.getMonth()-dob.getMonth();
+
+  if(month<0 || (month===0 && today.getDate()<dob.getDate())){
+    age--;
   }
 
-  if(months<0){
-    years--;
-    months+=12;
-  }
-
-  document.getElementById("ageResult").innerText=
-    years+" years, "+months+" months, "+days+" days";
+  document.getElementById("ageResult").innerText="Age: "+age+" years";
 }
 
-function bmiCalc(){
-  let weight=Number(document.getElementById("weight").value);
-  let height=Number(document.getElementById("height").value)/100;
 
-  if(!weight || !height){
-    document.getElementById("bmiResult").innerText=
-      "Please enter values.";
+function bmiCalc(){
+
+  let weight=parseFloat(document.getElementById("weight").value);
+  let height=parseFloat(document.getElementById("height").value);
+
+  if(isNaN(weight)||isNaN(height)||height<=0){
+    document.getElementById("bmiResult").innerText="Please enter valid values.";
     return;
   }
 
-  let bmi=weight/(height*height);
+  let bmi=weight/((height/100)*(height/100));
 
   document.getElementById("bmiResult").innerText=
-    bmi.toFixed(2);
+    "BMI: "+bmi.toFixed(2);
 }
 
+
 function monthlyPayment(amount,rate,years){
+
   let r=rate/100/12;
   let n=years*12;
 
@@ -517,77 +467,83 @@ function monthlyPayment(amount,rate,years){
     return amount/n;
   }
 
-  return amount*r*Math.pow(1+r,n)/
-    (Math.pow(1+r,n)-1);
+  return amount*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
 }
+
 
 function emiCalc(){
-  let amount=Number(document.getElementById("emiAmount").value);
-  let rate=Number(document.getElementById("emiRate").value);
-  let years=Number(document.getElementById("emiYears").value);
 
-  if(!amount || !years){
-    document.getElementById("emiResult").innerText=
-      "Please enter values.";
+  let amount=parseFloat(document.getElementById("emiAmount").value);
+  let rate=parseFloat(document.getElementById("emiRate").value);
+  let years=parseFloat(document.getElementById("emiYears").value);
+
+  if(isNaN(amount)||isNaN(rate)||isNaN(years)){
+    document.getElementById("emiResult").innerText="Please enter valid values.";
     return;
   }
 
-  let payment=monthlyPayment(amount,rate,years);
-  let total=payment*years*12;
+  let monthly=monthlyPayment(amount,rate,years);
+  let total=monthly*years*12;
 
   document.getElementById("emiResult").innerText=
-    "Monthly Payment: "+payment.toFixed(2)+
+    "Monthly Payment: "+monthly.toFixed(2)+
     " | Total Payment: "+total.toFixed(2);
 }
 
-function loanCalc(){
-  let amount=Number(document.getElementById("loanAmount").value);
-  let rate=Number(document.getElementById("loanRate").value);
-  let years=Number(document.getElementById("loanYears").value);
 
-  if(!amount || !years){
-    document.getElementById("loanResult").innerText=
-      "Please enter values.";
+function loanCalc(){
+
+  let amount=parseFloat(document.getElementById("loanAmount").value);
+  let rate=parseFloat(document.getElementById("loanRate").value);
+  let years=parseFloat(document.getElementById("loanYears").value);
+
+  if(isNaN(amount)||isNaN(rate)||isNaN(years)){
+    document.getElementById("loanResult").innerText="Please enter valid values.";
     return;
   }
 
-  let payment=monthlyPayment(amount,rate,years);
-  let total=payment*years*12;
+  let monthly=monthlyPayment(amount,rate,years);
 
   document.getElementById("loanResult").innerText=
-    "Monthly Payment: "+payment.toFixed(2)+
-    " | Total Payment: "+total.toFixed(2);
+    "Monthly Payment: "+monthly.toFixed(2);
 }
 
+
 function mortgageCalc(){
-  let price=Number(document.getElementById("homePrice").value);
-  let down=Number(document.getElementById("downPayment").value);
-  let rate=Number(document.getElementById("mortgageRate").value);
-  let years=Number(document.getElementById("mortgageYears").value);
+
+  let price=parseFloat(document.getElementById("homePrice").value);
+  let down=parseFloat(document.getElementById("downPayment").value);
+  let rate=parseFloat(document.getElementById("mortgageRate").value);
+  let years=parseFloat(document.getElementById("mortgageYears").value);
+
+  if(isNaN(price)||isNaN(down)||isNaN(rate)||isNaN(years)){
+    document.getElementById("mortgageResult").innerText="Please enter valid values.";
+    return;
+  }
 
   let loan=price-down;
 
-  if(!loan || !years){
-    document.getElementById("mortgageResult").innerText=
-      "Please enter values.";
+  if(loan<=0){
+    document.getElementById("mortgageResult").innerText="Loan amount must be greater than 0.";
     return;
   }
 
-  let payment=monthlyPayment(loan,rate,years);
+  let monthly=monthlyPayment(loan,rate,years);
 
   document.getElementById("mortgageResult").innerText=
-    "Monthly Mortgage Payment: "+payment.toFixed(2);
+    "Monthly Payment: "+monthly.toFixed(2);
 }
 
-function calorieCalc(){
-  let age=Number(document.getElementById("calAge").value);
-  let gender=document.getElementById("calGender").value;
-  let weight=Number(document.getElementById("calWeight").value);
-  let height=Number(document.getElementById("calHeight").value);
 
-  if(!age || !weight || !height){
-    document.getElementById("calorieResult").innerText=
-      "Please enter values.";
+function calorieCalc(){
+
+  let age=parseFloat(document.getElementById("calAge").value);
+  let gender=document.getElementById("calGender").value;
+  let weight=parseFloat(document.getElementById("calWeight").value);
+  let height=parseFloat(document.getElementById("calHeight").value);
+
+  if(isNaN(age)||isNaN(weight)||isNaN(height)){
+    document.getElementById("calResult").innerText="Please enter valid values.";
     return;
   }
 
@@ -599,73 +555,65 @@ function calorieCalc(){
     bmr=10*weight+6.25*height-5*age-161;
   }
 
-  document.getElementById("calorieResult").innerText=
-    Math.round(bmr)+" kcal/day";
+  document.getElementById("calResult").innerText=
+    "Estimated BMR: "+Math.round(bmr)+" calories/day";
 }
 
-function dateCalc(){
-  let start=new Date(
-    document.getElementById("startDate").value
-  );
 
-  let end=new Date(
-    document.getElementById("endDate").value
-  );
+function dateCalc(){
+
+  let start=new Date(document.getElementById("startDate").value);
+  let end=new Date(document.getElementById("endDate").value);
 
   if(isNaN(start)||isNaN(end)){
-    document.getElementById("dateResult").innerText=
-      "Please select both dates.";
+    document.getElementById("dateResult").innerText="Please select both dates.";
     return;
   }
 
   let diff=Math.abs(end-start);
-
-  let days=Math.round(
-    diff/(1000*60*60*24)
-  );
+  let days=Math.round(diff/(1000*60*60*24));
 
   document.getElementById("dateResult").innerText=
-    days+" days";
+    "Difference: "+days+" days";
 }
 
-function unitCalc(){
-  let value=Number(
-    document.getElementById("unitValue").value
-  );
 
+function unitCalc(){
+
+  let value=parseFloat(document.getElementById("unitValue").value);
   let type=document.getElementById("unitType").value;
 
   if(isNaN(value)){
-    document.getElementById("unitResult").innerText=
-      "Please enter a value.";
+    document.getElementById("unitResult").innerText="Please enter a value.";
     return;
   }
 
   let result;
 
-  if(type==="km-mi") result=value*0.621371;
-  if(type==="mi-km") result=value*1.609344;
-  if(type==="kg-lb") result=value*2.2046226218;
-  if(type==="lb-kg") result=value*0.45359237;
+  if(type==="km-mile") result=value*0.621371;
+  if(type==="mile-km") result=value*1.60934;
+  if(type==="kg-lb") result=value*2.20462;
+  if(type==="lb-kg") result=value*0.453592;
   if(type==="cm-ft") result=value*0.0328084;
   if(type==="ft-cm") result=value*30.48;
 
   document.getElementById("unitResult").innerText=
-    result.toFixed(4);
+    "Result: "+result.toFixed(4);
 }
 
-function bodyFatCalc(){
-  let age=Number(document.getElementById("bfAge").value);
-  let gender=document.getElementById("bfGender").value;
-  let bmi=Number(document.getElementById("bfBMI").value);
 
-  if(!age || !bmi){
-    document.getElementById("bfResult").innerText=
-      "Please enter values.";
+function bodyFatCalc(){
+
+  let age=parseFloat(document.getElementById("bfAge").value);
+  let gender=document.getElementById("bfGender").value;
+  let bmi=parseFloat(document.getElementById("bfBMI").value);
+
+  if(isNaN(age)||isNaN(bmi)){
+    document.getElementById("bfResult").innerText="Please enter valid values.";
     return;
   }
 
-  let sex=gender==="male" ? 1 : 0;
+  let sex=gender==="male"?1:0;
 
   let bodyFat=
     1.20*bmi+
@@ -674,7 +622,7 @@ function bodyFatCalc(){
     5.4;
 
   document.getElementById("bfResult").innerText=
-    bodyFat.toFixed(0)+"%";
+    "Estimated Body Fat: "+bodyFat.toFixed(1)+"%";
 }
 
 </script>
