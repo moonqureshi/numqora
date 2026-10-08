@@ -1,301 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Percentage Calculator - Free Online Tool | Numqora</title>
+  <title>Free Percentage & Age Calculator | Numqora</title>
+  <meta name="description" content="Free online percentage and age calculators. Calculate percentages, percentage increase or decrease, and exact age easily.">
 
-<meta name="description" content="Free percentage calculator. Calculate percentages, percentage increase and decrease, and find what percentage one number is of another.">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<style>
-*{box-sizing:border-box}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f7fb;
+      color: #222;
+    }
 
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f5f7fa;
-    color:#222;
-}
+    header {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
 
-header{
-    background:white;
-    padding:25px 15px;
-    text-align:center;
-    border-bottom:1px solid #ddd;
-}
+    header h1 {
+      margin: 0 0 8px;
+    }
 
-header h1{
-    margin:0;
-    font-size:30px;
-}
+    header p {
+      margin: 0;
+      color: #ddd;
+    }
 
-header p{
-    color:#666;
-    margin:8px 0 0;
-}
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
 
-.container{
-    max-width:750px;
-    margin:35px auto;
-    padding:15px;
-}
+    .card {
+      background: white;
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
 
-.card{
-    background:white;
-    padding:25px;
-    margin-bottom:20px;
-    border-radius:12px;
-    box-shadow:0 3px 15px rgba(0,0,0,.07);
-}
+    h2 {
+      margin-top: 0;
+    }
 
-.card h2{
-    margin-top:0;
-}
+    label {
+      display: block;
+      margin-top: 12px;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
 
-label{
-    display:block;
-    margin-top:15px;
-    margin-bottom:6px;
-    font-weight:bold;
-}
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      font-size: 16px;
+    }
 
-input{
-    width:100%;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:6px;
-    font-size:16px;
-}
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 18px;
+      border: none;
+      border-radius: 7px;
+      background: #222;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-button{
-    width:100%;
-    padding:13px;
-    margin-top:18px;
-    border:0;
-    border-radius:6px;
-    background:#222;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-}
+    button:hover {
+      background: #444;
+    }
 
-button:hover{
-    opacity:.85;
-}
+    .result {
+      margin-top: 15px;
+      padding: 12px;
+      background: #f0f2f5;
+      border-radius: 7px;
+      font-weight: bold;
+    }
 
-.result{
-    margin-top:18px;
-    padding:15px;
-    background:#f0f0f0;
-    border-radius:6px;
-    text-align:center;
-    font-size:18px;
-    font-weight:bold;
-}
-
-.info{
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    line-height:1.6;
-}
-
-footer{
-    text-align:center;
-    padding:25px;
-    color:#777;
-}
-</style>
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #666;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-<h1>Numqora</h1>
-<p>Free Online Calculators</p>
+  <h1>Numqora Calculators</h1>
+  <p>Free online calculators for everyday use</p>
 </header>
 
 <div class="container">
 
-<!-- Calculator 1 -->
-<div class="card">
-<h2>What is X% of Y?</h2>
+  <!-- Calculator 1 -->
+  <div class="card">
+    <h2>What is X% of Y?</h2>
 
-<label>Percentage (%)</label>
-<input type="number" id="percent1" placeholder="Example: 20">
+    <label>Percentage (%)</label>
+    <input type="number" id="percent1" placeholder="Example: 20">
 
-<label>Number</label>
-<input type="number" id="number1" placeholder="Example: 150">
+    <label>Number</label>
+    <input type="number" id="number1" placeholder="Example: 500">
 
-<button onclick="calculate1()">Calculate</button>
+    <button onclick="calculate1()">Calculate</button>
 
-<div class="result" id="result1">
-Your result will appear here.
-</div>
-</div>
+    <div class="result" id="result1">Result will appear here</div>
+  </div>
 
 
-<!-- Calculator 2 -->
-<div class="card">
-<h2>X is what percentage of Y?</h2>
+  <!-- Calculator 2 -->
+  <div class="card">
+    <h2>X is What % of Y?</h2>
 
-<label>First Number</label>
-<input type="number" id="number2" placeholder="Example: 25">
+    <label>Number (X)</label>
+    <input type="number" id="number2" placeholder="Example: 50">
 
-<label>Second Number</label>
-<input type="number" id="number3" placeholder="Example: 100">
+    <label>Total (Y)</label>
+    <input type="number" id="total2" placeholder="Example: 200">
 
-<button onclick="calculate2()">Calculate</button>
+    <button onclick="calculate2()">Calculate</button>
 
-<div class="result" id="result2">
-Your result will appear here.
-</div>
-</div>
+    <div class="result" id="result2">Result will appear here</div>
+  </div>
 
 
-<!-- Calculator 3 -->
-<div class="card">
-<h2>Percentage Increase or Decrease</h2>
+  <!-- Calculator 3 -->
+  <div class="card">
+    <h2>Percentage Increase or Decrease</h2>
 
-<label>Original Value</label>
-<input type="number" id="original" placeholder="Example: 100">
+    <label>Original Value</label>
+    <input type="number" id="original3" placeholder="Example: 100">
 
-<label>New Value</label>
-<input type="number" id="newvalue" placeholder="Example: 120">
+    <label>New Value</label>
+    <input type="number" id="new3" placeholder="Example: 120">
 
-<button onclick="calculate3()">Calculate</button>
+    <button onclick="calculate3()">Calculate</button>
 
-<div class="result" id="result3">
-Your result will appear here.
-</div>
-</div>
+    <div class="result" id="result3">Result will appear here</div>
+  </div>
 
 
-<!-- Information -->
-<div class="info">
+  <!-- Age Calculator -->
+  <div class="card">
+    <h2>Age Calculator</h2>
 
-<h2>How to Calculate Percentage</h2>
+    <label>Date of Birth</label>
+    <input type="date" id="dob">
 
-<p>
-A percentage shows a number as a fraction of 100.
-Percentages are commonly used for discounts, marks,
-prices, business calculations and many other situations.
-</p>
+    <button onclick="calculateAge()">Calculate Age</button>
 
-<h3>Percentage Formula</h3>
-
-<p>
-<strong>Percentage = (Part ÷ Total) × 100</strong>
-</p>
-
-<h3>Example</h3>
-
-<p>
-If you scored 45 marks out of 60:
-</p>
-
-<p>
-(45 ÷ 60) × 100 = <strong>75%</strong>
-</p>
-
-<h3>Percentage Increase Formula</h3>
-
-<p>
-<strong>
-((New Value - Original Value) ÷ Original Value) × 100
-</strong>
-</p>
-
-</div>
+    <div class="result" id="ageResult">Your age will appear here</div>
+  </div>
 
 </div>
 
 <footer>
-© 2026 Numqora. All rights reserved.
+  <p>© 2026 Numqora. Free Online Calculators.</p>
 </footer>
 
 
 <script>
 
-function calculate1(){
+function calculate1() {
+  const percentage = parseFloat(document.getElementById("percent1").value);
+  const number = parseFloat(document.getElementById("number1").value);
 
-let percent = parseFloat(document.getElementById("percent1").value);
-let number = parseFloat(document.getElementById("number1").value);
+  if (isNaN(percentage) || isNaN(number)) {
+    document.getElementById("result1").innerText = "Please enter valid numbers.";
+    return;
+  }
 
-if(isNaN(percent) || isNaN(number)){
-document.getElementById("result1").textContent =
-"Please enter both numbers.";
-return;
-}
+  const result = (percentage / 100) * number;
 
-let answer = (percent / 100) * number;
-
-document.getElementById("result1").textContent =
-percent + "% of " + number + " = " + answer;
-}
-
-
-function calculate2(){
-
-let number = parseFloat(document.getElementById("number2").value);
-let total = parseFloat(document.getElementById("number3").value);
-
-if(isNaN(number) || isNaN(total)){
-document.getElementById("result2").textContent =
-"Please enter both numbers.";
-return;
-}
-
-if(total === 0){
-document.getElementById("result2").textContent =
-"Second number cannot be zero.";
-return;
-}
-
-let answer = (number / total) * 100;
-
-document.getElementById("result2").textContent =
-number + " is " + answer.toFixed(2) + "% of " + total;
+  document.getElementById("result1").innerText =
+    percentage + "% of " + number + " = " + result;
 }
 
 
-function calculate3(){
+function calculate2() {
+  const number = parseFloat(document.getElementById("number2").value);
+  const total = parseFloat(document.getElementById("total2").value);
 
-let original = parseFloat(document.getElementById("original").value);
-let newvalue = parseFloat(document.getElementById("newvalue").value);
+  if (isNaN(number) || isNaN(total) || total === 0) {
+    document.getElementById("result2").innerText =
+      "Please enter valid numbers.";
+    return;
+  }
 
-if(isNaN(original) || isNaN(newvalue)){
-document.getElementById("result3").textContent =
-"Please enter both numbers.";
-return;
+  const result = (number / total) * 100;
+
+  document.getElementById("result2").innerText =
+    number + " is " + result.toFixed(2) + "% of " + total;
 }
 
-if(original === 0){
-document.getElementById("result3").textContent =
-"Original value cannot be zero.";
-return;
+
+function calculate3() {
+  const original = parseFloat(document.getElementById("original3").value);
+  const newValue = parseFloat(document.getElementById("new3").value);
+
+  if (isNaN(original) || isNaN(newValue) || original === 0) {
+    document.getElementById("result3").innerText =
+      "Please enter valid numbers.";
+    return;
+  }
+
+  const change = ((newValue - original) / original) * 100;
+
+  if (change > 0) {
+    document.getElementById("result3").innerText =
+      "Percentage Increase: " + change.toFixed(2) + "%";
+  } else if (change < 0) {
+    document.getElementById("result3").innerText =
+      "Percentage Decrease: " + Math.abs(change).toFixed(2) + "%";
+  } else {
+    document.getElementById("result3").innerText =
+      "No percentage change.";
+  }
 }
 
-let change = ((newvalue - original) / original) * 100;
 
-if(change > 0){
+function calculateAge() {
+  const dobValue = document.getElementById("dob").value;
 
-document.getElementById("result3").textContent =
-"Percentage increase: " + change.toFixed(2) + "%";
+  if (!dobValue) {
+    document.getElementById("ageResult").innerText =
+      "Please select your date of birth.";
+    return;
+  }
 
-}else if(change < 0){
+  const dob = new Date(dobValue + "T00:00:00");
+  const today = new Date();
 
-document.getElementById("result3").textContent =
-"Percentage decrease: " + Math.abs(change).toFixed(2) + "%";
+  let years = today.getFullYear() - dob.getFullYear();
+  let months = today.getMonth() - dob.getMonth();
+  let days = today.getDate() - dob.getDate();
 
-}else{
+  if (days < 0) {
+    months--;
 
-document.getElementById("result3").textContent =
-"No percentage change.";
+    const previousMonth = new Date(
+      today.getFullYear(),
+      today.getMonth(),
+      0
+    );
 
-}
+    days += previousMonth.getDate();
+  }
 
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  if (dob > today) {
+    document.getElementById("ageResult").innerText =
+      "Date of birth cannot be in the future.";
+    return;
+  }
+
+  document.getElementById("ageResult").innerText =
+    "You are " + years + " years, " +
+    months + " months, and " +
+    days + " days old.";
 }
 
 </script>
