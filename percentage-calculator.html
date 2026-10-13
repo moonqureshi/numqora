@@ -1,0 +1,378 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Percentage Calculator Online - Free | Numqora</title>
+  <meta name="description" content="Use Numqora's free percentage calculator to calculate percentages, find what percent one number is of another, and calculate percentage increase or decrease.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moonqureshi.github.io/numqora/percentage-calculator.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 18px 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .logo {
+      color: white;
+      text-decoration: none;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+
+    main {
+      padding: 35px 0 50px;
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: 23px;
+      margin-top: 30px;
+    }
+
+    .intro {
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    .calculator {
+      background: white;
+      padding: 24px;
+      margin: 22px 0;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .calculator h2 {
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 15px 0 6px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 7px;
+      font-size: 16px;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: 0;
+      border-radius: 7px;
+      padding: 12px 18px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 16px;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .result {
+      margin-top: 16px;
+      padding: 12px;
+      background: #eff6ff;
+      border-radius: 7px;
+      overflow-wrap: anywhere;
+    }
+
+    .result:empty {
+      display: none;
+    }
+
+    .info {
+      background: white;
+      padding: 24px;
+      border-radius: 14px;
+      margin-top: 25px;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 22px 15px;
+    }
+
+    footer a {
+      color: white;
+      margin: 0 7px;
+    }
+
+    @media (max-width: 600px) {
+      header .container {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 0 12px 0 0;
+      }
+
+      h1 {
+        font-size: 27px;
+      }
+
+      .calculator,
+      .info {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <a class="logo" href="index.html">Numqora</a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Free Online Percentage Calculator</h1>
+    <p class="intro">
+      Calculate percentages quickly and easily with Numqora.
+      Find a percentage of any number, discover what percentage
+      one number is of another, or calculate percentage increase
+      and decrease.
+    </p>
+
+    <section class="calculator">
+      <h2>1. Calculate X% of Y</h2>
+      <p>Find a percentage of a number.</p>
+
+      <label for="percent">Percentage (%)</label>
+      <input id="percent" type="number" step="any"
+        placeholder="e.g. 20">
+
+      <label for="number">Number</label>
+      <input id="number" type="number" step="any"
+        placeholder="e.g. 500">
+
+      <button type="button" onclick="calculatePercent()">
+        Calculate
+      </button>
+      <div id="result1" class="result" aria-live="polite"></div>
+    </section>
+
+    <section class="calculator">
+      <h2>2. What Percentage Is X of Y?</h2>
+      <p>Find what percentage one number represents of another.</p>
+
+      <label for="part">First Number</label>
+      <input id="part" type="number" step="any"
+        placeholder="e.g. 25">
+
+      <label for="whole">Total Number</label>
+      <input id="whole" type="number" step="any"
+        placeholder="e.g. 100">
+
+      <button type="button" onclick="calculateWhatPercent()">
+        Calculate
+      </button>
+      <div id="result2" class="result" aria-live="polite"></div>
+    </section>
+
+    <section class="calculator">
+      <h2>3. Percentage Increase or Decrease</h2>
+      <p>Compare an original value with a new value.</p>
+
+      <label for="original">Original Value</label>
+      <input id="original" type="number" step="any"
+        placeholder="e.g. 100">
+
+      <label for="newValue">New Value</label>
+      <input id="newValue" type="number" step="any"
+        placeholder="e.g. 125">
+
+      <button type="button" onclick="calculateChange()">
+        Calculate Change
+      </button>
+      <div id="result3" class="result" aria-live="polite"></div>
+    </section>
+
+    <section class="info">
+      <h2>How to Calculate a Percentage</h2>
+      <p>
+        A percentage expresses a number as a part of 100.
+        Percentages are useful for shopping discounts, exam marks,
+        business profits, price changes and everyday calculations.
+      </p>
+
+      <h3>Percentage Formula</h3>
+      <p><strong>Percentage of a number:</strong>
+        (Percentage ÷ 100) × Number</p>
+      <p><strong>What percentage:</strong>
+        (Part ÷ Total) × 100</p>
+      <p><strong>Percentage change:</strong>
+        ((New Value − Original Value) ÷ Original Value) × 100</p>
+
+      <h2>Examples</h2>
+      <p>20% of 500 is 100.</p>
+      <p>25 is 25% of 100.</p>
+      <p>An increase from 100 to 125 is a 25% increase.</p>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>How do I calculate 10% of a number?</h3>
+      <p>Divide the number by 10. For example, 10% of 200 is 20.</p>
+
+      <h3>How do I calculate a percentage discount?</h3>
+      <p>
+        Multiply the original price by the discount percentage
+        divided by 100. Subtract the result from the original price.
+      </p>
+
+      <h3>Is this percentage calculator free?</h3>
+      <p>Yes. You can use this Numqora calculator for free.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Numqora — Free Online Calculators</p>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+    <a href="contact.html">Contact</a>
+  </footer>
+
+  <script>
+    function getNumber(id) {
+      const field = document.getElementById(id);
+      const value = field.value.trim();
+
+      if (value === "" || !Number.isFinite(Number(value))) {
+        throw new Error("Please enter valid numbers in all fields.");
+      }
+
+      return Number(value);
+    }
+
+    function formatNumber(value) {
+      return value.toLocaleString("en-US", {
+        maximumFractionDigits: 8
+      });
+    }
+
+    function showError(resultId, message) {
+      document.getElementById(resultId).textContent = message;
+    }
+
+    function calculatePercent() {
+      try {
+        const percent = getNumber("percent");
+        const number = getNumber("number");
+        const answer = (percent / 100) * number;
+
+        showError("result1",
+          formatNumber(percent) + "% of " +
+          formatNumber(number) + " = " + formatNumber(answer));
+      } catch (error) {
+        showError("result1", error.message);
+      }
+    }
+
+    function calculateWhatPercent() {
+      try {
+        const part = getNumber("part");
+        const whole = getNumber("whole");
+
+        if (whole === 0) {
+          throw new Error("The total number cannot be zero.");
+        }
+
+        const answer = (part / whole) * 100;
+
+        showError("result2",
+          formatNumber(part) + " is " +
+          formatNumber(answer) + "% of " + formatNumber(whole));
+      } catch (error) {
+        showError("result2", error.message);
+      }
+    }
+
+    function calculateChange() {
+      try {
+        const original = getNumber("original");
+        const newValue = getNumber("newValue");
+
+        if (original === 0) {
+          throw new Error("The original value cannot be zero.");
+        }
+
+        const change = ((newValue - original) / Math.abs(original)) * 100;
+        let description;
+
+        if (change > 0) {
+          description = "Increase";
+        } else if (change < 0) {
+          description = "Decrease";
+        } else {
+          description = "No change";
+        }
+
+        showError("result3",
+          description + ": " + formatNumber(Math.abs(change)) + "%");
+      } catch (error) {
+        showError("result3", error.message);
+      }
+    }
+  </script>
+</body>
+</html>
+```
